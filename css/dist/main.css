@@ -1,0 +1,94 @@
+body {
+  border: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 60px 1fr 1fr 1fr 1fr;
+  grid-template-areas: "aTitulo aTitulo" "aLogo aFormulario" "aLogo aFormulario" "aNoticias aFormulario" "aNoticias aPie ";
+  gap: 0.25em;
+}
+
+.titulo {
+  background-color: beige;
+  grid-area: aTitulo;
+  text-align: center;
+}
+
+.titulo h1 {
+  font-size: 2.5em;
+}
+
+.logo {
+  background-color: cadetblue;
+  grid-area: aLogo;
+  text-align: center;
+}
+
+.logo img {
+  width: 300px;
+}
+
+.noticias {
+  background-color: aqua;
+  grid-area: aNoticias;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5em;
+}
+
+.noticias .imgnoticia {
+  width: 150px;
+  transition: 1s;
+}
+
+.noticias .imgnoticia:hover {
+  transform: scale(1.1);
+}
+
+.formulario {
+  background-color: darkcyan;
+  grid-area: aFormulario;
+  display: inline;
+  text-align: center;
+}
+
+.formulario form {
+  text-align: left;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
+  gap: 1em;
+}
+
+.pie {
+  background-color: cornflowerblue;
+  grid-area: aPie;
+}
+
+.pie p {
+  font-size: 1.25em;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+@media screen and (min-width: 400px) and (max-width: 900px) {
+  body {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(auto-fill, 1fr);
+    grid-template-areas: "aLogo aLogo aTitulo aTitulo aTitulo aTitulo" "aNoticias aNoticias aNoticias aNoticias aNoticias aNoticias" "aFormulario aFormulario aFormulario aFormulario aFormulario aFormulario" "aPie aPie aPie aPie aPie aPie";
+  }
+  .logo {
+    text-align: center;
+  }
+  .logo img {
+    width: 10ex;
+  }
+  .noticias {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .noticias .noticia {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
